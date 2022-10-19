@@ -14,4 +14,4 @@ if __name__ == "__main__":
     assert isfile(argv[1]), "Input BAM file not found: %s" % argv[1]
     assert isfile(argv[2]), "Reference FASTA file not found: %s" % argv[2]
     assert not isfile(argv[3]), "Output DB file exists: %s" % argv[3]
-    create_db(argv[3], argv[2]).add_entry(argv[2], argv[2])
+    create_db(argv[3], argv[2]).add_entry(argv[1], argv[1])
