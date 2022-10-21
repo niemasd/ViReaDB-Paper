@@ -3,7 +3,7 @@
 Create a ViReaDB database from a given CRAM
 '''
 from os.path import isfile
-from resource import getrusage, RUSAGE_SELF
+from resource import getrusage, RUSAGE_CHILDREN, RUSAGE_SELF
 from sys import argv
 from time import time
 from vireadb import create_db
@@ -25,4 +25,4 @@ if __name__ == "__main__":
     db.compute_consensus(argv[1])
     t4 = time(); print("Time to Compute Consensus (s)\t%s" % (t4-t3))
     print("Total Time (s)\t%s" % (t4-t1))
-    print("Peak Memory (KB)\t%s" % getrusage(RUSAGE_SELF).ru_maxrss)
+    print("Peak Memory (KB)\t%s" % (getrusage(RUSAGE_SELF).ru_maxrss + getrusage(RUSAGE_CHILDREN).ru_maxrss))
