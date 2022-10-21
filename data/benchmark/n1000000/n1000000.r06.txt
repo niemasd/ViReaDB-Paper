@@ -1,0 +1,5 @@
+Time to Build DB (s)	0.7042186260223389
+Time to Compute Counts (s)	999.970623254776
+Time to Compute Consensus (s)	2.656947374343872
+Total Time (s)	1003.3317892551422
+Peak Memory (KB)	171620
