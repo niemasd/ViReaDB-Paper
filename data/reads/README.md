@@ -13,5 +13,5 @@ for n in 100 1000 10000 100000 1000000 ; do mkdir -p n$n && for r in $(seq -w 1 
 Create ViReaDB and compute counts/consensus:
 
 ```
-parallel --jobs 4 ../../scripts/cram_to_vireadb.py n{1}/n{1}.r{2}.cram ../ref/NC_045512.2.fas ../db/n{1}/n{1}.r{2}.db "2>&1" ">" ../benchmark/n{1}.r{2}.txt ::: 100 1000 10000 100000 1000000 ::: $(seq -w 1 10)
+parallel --jobs 4 ../../scripts/cram_to_vireadb.py n{1}/n{1}.r{2}.cram ../ref/NC_045512.2.fas ../db/n{1}/n{1}.r{2}.db "2>&1" ">" ../benchmark/n{1}/n{1}.r{2}.txt ::: 100 1000 10000 100000 1000000 ::: $(seq -w 1 10)
 ```
